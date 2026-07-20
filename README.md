@@ -73,32 +73,6 @@ from a single frontal electrode, using a three-stage methodology:
 
 ---
 
-## Repository structure
-
-```
-sleep-stage-eeg/
-├── data/                  # git-ignored: raw EDFs + processed epochs (in Google Drive)
-├── src/
-│   ├── utils.py           # config loader, set_seed()
-│   ├── preprocessing.py   # EDF -> clean, labelled 30-s epochs
-│   ├── features.py        # spectral + time-domain features (baseline)
-│   ├── models.py          # RandomForest, SleepCNN, SleepCNN_LSTM
-│   ├── train.py           # training loop, class weights, early stopping
-│   └── evaluate.py        # subject-independent CV, metrics, confusion, CAP transfer
-├── configs/config.yaml    # every fixed number: bands, filter cut-offs, seed, paths
-├── notebooks/
-│   └── sleep_pipeline.ipynb   # end-to-end runnable pipeline (Colab)
-├── results/               # metrics + figures (hypnogram, confusion, importances)
-├── requirements.txt
-├── LICENSE                # MIT
-└── README.md
-```
-
-The full pipeline is runnable end-to-end in `notebooks/sleep_pipeline.ipynb` on a
-free Google Colab GPU; no local hardware is required.
-
----
-
 ## Data
 
 **Primary — Sleep-EDF Database Expanded v1.0.0, Sleep Cassette subset** (PhysioNet).
